@@ -6,7 +6,7 @@ ADMINS = {
     [123] = true;
 }
 OWNER = {
-    [3656659459] = true;
+    [2205701910] = true;
 }
 
 function initiateNames()
@@ -14,13 +14,13 @@ function initiateNames()
     for _,v in pairs(game:GetService('Players'):GetPlayers()) do
         if v.Character then
             if OWNER[v.UserId] then
-                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👑] ' .. v.DisplayName)
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👑 Trip Hub Owner 👑] ' .. v.DisplayName)
             elseif ADMINS[v.UserId] then
-                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🌟] ' .. v.DisplayName)
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🔨 Trip Hub MOD 🔨] ' .. v.DisplayName)
             elseif MODS[v.UserId] then
-                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⭐] ' .. v.DisplayName)
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🌟 Trip Hub Premium 🌟] ' .. v.DisplayName)
             elseif not v.Character.LowerTorso:FindFirstChild('OriginalSize') then
-                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[😎] ' .. v.DisplayName)
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👤 Trip Hub Member 👤] ' .. v.DisplayName)
             end
         end
     end
